@@ -1,0 +1,171 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --app-bg: #f8fafc;
+  --app-text: #0f172a;
+  --app-border: rgba(226, 232, 240, 0.9);
+  --app-surface: #ffffff;
+  --app-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.08);
+}
+
+.dark {
+  color-scheme: dark;
+  --app-bg: #090d16;
+  --app-text: #f1f5f9;
+  --app-border: rgba(30, 41, 59, 0.7);
+  --app-surface: #0f172a;
+  --app-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--app-text);
+  background-color: var(--app-bg);
+  background-image:
+    radial-gradient(circle at top left, rgba(79, 70, 229, 0.08), transparent 35%),
+    radial-gradient(circle at top right, rgba(14, 165, 233, 0.06), transparent 30%);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.dark body {
+  background-image:
+    radial-gradient(circle at top left, rgba(99, 102, 241, 0.15), transparent 40%),
+    radial-gradient(circle at top right, rgba(14, 165, 233, 0.12), transparent 35%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.35);
+  border-radius: 999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(51, 65, 85, 0.5);
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.surface {
+  border: 1px solid var(--app-border);
+  background: var(--app-surface);
+  border-radius: 1.25rem;
+  box-shadow: var(--app-shadow);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-shell {
+  width: 100%;
+  border-radius: 0.875rem;
+  border: 1px solid rgba(226, 232, 240, 1);
+  background: #ffffff;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.875rem;
+  font-family: var(--font-sans);
+  color: #0f172a;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.dark .input-shell {
+  border-color: rgba(51, 65, 85, 0.8);
+  background: #090d16;
+  color: #f1f5f9;
+}
+
+.input-shell:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-danger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  border-radius: 0.875rem;
+  padding: 0.65rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.15s ease, background-color 0.15s ease, opacity 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-primary:active,
+.btn-secondary:active,
+.btn-danger:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  border: 0;
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #4338ca, #4f46e5);
+  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.45);
+}
+
+.btn-secondary {
+  border: 1px solid rgba(226, 232, 240, 1);
+  background: #ffffff;
+  color: #334155;
+}
+
+.dark .btn-secondary {
+  border-color: rgba(51, 65, 85, 0.8);
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+.btn-secondary:hover {
+  background: #f8fafc;
+}
+
+.dark .btn-secondary:hover {
+  background: #1e293b;
+}
+
+.btn-danger {
+  border: 0;
+  background: #ef4444;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25);
+}
+
+.btn-danger:hover {
+  background: #dc2626;
+}
+
+.btn-primary:disabled,
+.btn-secondary:disabled,
+.btn-danger:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  transform: none;
+}

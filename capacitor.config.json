@@ -1,0 +1,6 @@
+{
+  "appId": "com.inventory.manager",
+  "appName": "Inventory Manager",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}
